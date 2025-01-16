@@ -1,0 +1,86 @@
+** start of undefined **
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Palindrome Checker</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Palindrome Checker</h1>
+    <input type="text" id="text-input" placeholder="Enter text">
+    <button id="check-btn">Check</button>
+    <p id="result"></p>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+** end of undefined **
+
+** start of undefined **
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color:skyblue;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+
+** end of undefined **
+
+** start of undefined **
+
+// Function to check if the input text is a palindrome
+function isPalindrome(text) {
+    // Remove all non-alphanumeric characters and convert to lowercase
+    const cleanedText = text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    // Check if the cleaned text is equal to its reverse
+    return cleanedText === cleanedText.split('').reverse().join('');
+}
+
+// Function to handle the check button click event
+function handleCheckClick() {
+    const textInput = document.getElementById('text-input').value;
+    const resultElement = document.getElementById('result');
+    
+    if (textInput === '') {
+        alert('Please input a value');
+    } else {
+        if (isPalindrome(textInput)) {
+            resultElement.textContent = `${textInput} is a palindrome`;
+        } else {
+            resultElement.textContent = `${textInput} is not a palindrome`;
+        }
+    }
+}
+
+// Add event listener to the check button
+document.getElementById('check-btn').addEventListener('click', handleCheckClick);
+
+
+** end of undefined **
+
